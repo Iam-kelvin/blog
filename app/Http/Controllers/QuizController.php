@@ -17,21 +17,22 @@ class QuizController extends Controller
     public function score(Request $request)
     {
         $answers = $request->input('answers');
-    $questions = Question::all();
-    $score = 0;
+        $questions = Question::all();
+        $score = 0;
 
-    foreach ($questions as $question) {
-        $answerKey = 'answer_' . $question->id;
+        foreach ($questions as $question) {
+            // $answerKey = 'answer_' . $question->id;
 
-        if ($question->answer == $answers[$answerKey][0]) {
-            $score++;
+            if ($question->answer == $answers[1]) {
+                $score++;
+            }
+
+            // Save the user's answer in the database
+            // $question->user_answer = $answers[$answerKey][0];
+            $question->user_answer = $answers[1];
+            // $question->save();
         }
 
-        // Save the user's answer in the database
-        $question->user_answer = $answers[$answerKey][0];
-        $question->save();
-    }
-
-    return view('score', compact('score'));
+        return view('score', compact('score'));
     }
 }
