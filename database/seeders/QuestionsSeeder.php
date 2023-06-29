@@ -23,6 +23,22 @@ class QuestionsSeeder extends Seeder
                 'option_d' => 'Madrid',
                 'answer' => 'option_b',
             ],
+            [
+                'question' => 'What is the capital of France?',
+                'option_a' => 'London',
+                'option_b' => 'Paris',
+                'option_c' => 'Berlin',
+                'option_d' => 'Madrid',
+                'answer' => 'option_b',
+            ],
+            [
+                'question' => 'What is the capital of France?',
+                'option_a' => 'London',
+                'option_b' => 'Paris',
+                'option_c' => 'Berlin',
+                'option_d' => 'Madrid',
+                'answer' => 'option_b',
+            ],
             // Add more questions here
         ];
     
