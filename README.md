@@ -3,6 +3,7 @@
 * Generate an application key `php artisan key:generate`
 * Create database 'blog'
 * Run migration script `php artisan migrate`
+* Run seeder `php artisan db:seed --class="QuestionsSeeder"`
 
 Other jazz
 ```
