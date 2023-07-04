@@ -19,6 +19,7 @@ class QuizController extends Controller
     {
         $questions = $this->questions; // Question::all();
         return view('quiz', compact('questions'));
+        // dd($questions);
     }
 
     public function score(Request $request)
@@ -26,6 +27,8 @@ class QuizController extends Controller
         $answers = $request->input('answers');
         $questions = $this->questions;
         $score = 0;
+        // dd($answers);
+
 
         foreach ($questions as $question) {
             // $answerKey = 'answer_' . $question->id;

@@ -20,3 +20,8 @@ Route::get('/', function () {
 // Route::get('/question', [App\Http\Controllers\QuestionController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\QuizController::class, 'index'])->name('quiz.index');
 Route::post('/score', [App\Http\Controllers\QuizController::class, 'score'])->name('quiz.score');
+
+/*Excel import export*/
+Route::get('export', 'App\Http\Controllers\ImportExportController@export')->name('export');
+Route::get('importExportView', 'App\Http\Controllers\ImportExportController@importExportView');
+Route::post('import', 'App\Http\Controllers\ImportExportController@import')->name('import');
