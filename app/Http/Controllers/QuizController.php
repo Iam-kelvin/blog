@@ -24,8 +24,8 @@ class QuizController extends Controller
     public function score(Request $request)
     {
         $answers = $request->input('answers');
-    $questions = Question::all();
-    $score = 0;
+        $questions = $this->questions;
+        $score = 0;
 
         foreach ($questions as $question) {
             // $answerKey = 'answer_' . $question->id;
@@ -35,9 +35,9 @@ class QuizController extends Controller
             }
 
         // Save the user's answer in the database
-        $question->user_answer = $answers[$answerKey][0];
-        $question->save();
-    }
+        $question->user_answer = $answers[$question->id];
+        // $question->save();
+        }
 
         return view('score', compact('score'));
     }
